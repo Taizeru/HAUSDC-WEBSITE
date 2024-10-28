@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organized Header Layout with Logo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> <!-- Importing Bebas Neue -->
+    <style>
+        body {
+            font-family: 'Bebas Neue', sans-serif; /* Change font for body */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Set a light background color for the body */
+            color: white; /* Text color */
+        }
+
+        /* Moving Strip Styles */
+        .moving-strip {
+            position: relative; /* Position it in relation to the document flow */
+            width: 100%;
+            background-color: black; /* Background color for the strip */
+            color: red;
+            font-size: 24px; /* Font size for moving text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow to create a clean edge */
+            display: flex;
+            align-items: center; /* Center text vertically */
+            z-index: 10; /* Ensure it appears above other elements */
+            padding: 10px 0; /* Padding for vertical spacing */
+        }
+
+        .moving-text {
+            display: flex; /* Use flexbox for seamless effect */
+            animation: glitch 1s linear infinite; /* Glitch animation */
+            position: relative; /* Set position to relative for absolute children */
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            10% {
+                transform: translateY(-2px);
+                opacity: 0.8;
+            }
+            20% {
+                transform: translateY(2px);
+                opacity: 0.6;
+            }
+            30% {
+                transform: translateY(-2px);
+                opacity: 0.8;
+            }
+            40% {
+                transform: translateY(2px);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Repeat the text for a seamless effect */
+        .moving-text span {
+            padding-right: 50px; /* Add space between repeated texts */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  /* Align everything in the center vertically */
+            z-index: 5; /* Ensure header is below the strip */
+        }
+
+        /* Logo Text Style */
+        header .logo {
+            font-size: 36px; /* Set the font size for the logo */
+            font-weight: bold; /* Make the logo text bold */
+            color: red; /* Logo color */
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;  /* Aligns navigation items vertically */
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            margin-right: 20px;  /* Spacing between links */
+        }
+
+        /* Style for the Sign-up button to make it distinct */
+        header nav .signup {
+            background-color: red;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 20px;  /* Add space between the sign-up button and other links */
+            font-weight: bold;
+        }
+
+        /* Body Section */
+        .Body {
+            background-image: url('HAUSW.jpg'); /* Set HAUSW as the background image for the Body section */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 100vh; /* Set height to full viewport height */
+            display: flex;
+            justify-content: center; /* Center the text in the Body section */
+            align-items: center; /* Center items vertically */
+            padding: 50px;
+            position: relative;
+            text-align: center; /* Center align text */
+            margin: 0; /* No margin needed here */
+        }
+
+        /* Logo Image Style in Body Section */
+        .Body .text-section img {
+            height: auto; /* Maintain aspect ratio */
+            max-height: 600px; /* Increased maximum height for the logo */
+            max-width: 300%; /* Ensure the logo does not exceed the container width */
+        }
+
+        /* Content Section */
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 40px;
+            background-color: black; /* Set background color to black */
+            align-items: center; /* Center the items in the section */
+            margin: 0; /* Remove default margin */
+        }
+
+        .content-section .content-item {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center items horizontally */
+            gap: 30px; /* Space between the image and text */
+            max-width: 1000px; /* Limit the maximum width of content items */
+        }
+
+        .content-section .content-item img {
+            width: 400px; /* Set a larger width for the thumbnails */
+            height: auto; /* Maintain aspect ratio */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+            border: 5px solid red; /* Red border around the images */
+        }
+
+        .content-section .content-item .text {
+            font-size: 18px; /* Slightly increase font size for better readability */
+            line-height: 1.5;
+            max-width: 500px; /* Limit text width for better readability */
+            text-align: center; /* Center align text */
+        }
+
+        /* Additional Section */
+        .additional-section {
+            padding: 100px 40px;
+            background-image: url('CHECKM8.jpg'); /* Set CHECKM8 as the background image for the additional section */
+            background-size: cover; /* Cover the entire section */
+            background-position: center; /* Center the image */
+            color: white; /* Ensure text is visible against the background */
+            text-align: center;
+            min-height: 100vh; /* Ensure it occupies at least full viewport height */
+            margin-top: 0; /* Remove margin at the top */
+        }
+
+        .additional-section h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .additional-section p {
+            font-size: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="Index.html" class="logo"> <!-- Make HAUSDC logo clickable to home -->
+            HAUSDC
+        </a>
+        <nav>
+            <a href="History.html">HISTORY</a> <!-- Placeholder for history file -->
+            <a href="Merch.html">MERCH</a> <!-- Placeholder for merch file -->
+            <a href="Aboutus.html">ABOUT US</a> <!-- Placeholder for about us file -->
+            <a href="Sign-in.html" class="signup">SIGN-UP</a> <!-- Placeholder for sign-up file -->
+        </nav>
+    </header>
+
+    <!-- Moving Strip -->
+    <div class="moving-strip">
+        <div class="moving-text">
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+        </div>
+    </div>
+
+    <!-- Body Section -->
+    <section class="Body">
+        <div class="text-section">
+            <img src="HAUSLOGOR.png" alt="HAUSDC Logo" title="HAUSDC Logo"> <!-- Logo for HAUSDC -->
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-item">
+            <div class="image">
+                <a href="https://www.youtube.com/watch?v=6n-kyxiVy2Y" target="_blank"> <!-- Link to the HAUSYT video -->
+                    <img src="HAUSYT.jpg" alt="HAUSYT Thumbnail"> <!-- Thumbnail for HAUSYT -->
+                </a>
+            </div>
+            <div class="text">
+                Holy Angel University Street Dance Crew (HAUSDC) is a talented group of dancers from the prestigious Holy Angel University. Established to showcase their skills, they have captivated audiences with their vibrant performances and dedication to the art of dance.
+            </div>
+        </div>
+        <div class="content-item">
+            <div class="image">
+                <a href="https://www.youtube.com/watch?v=H6sXb41nN_s" target="_blank"> <!-- Link to the HAUSAUDI video -->
+                    <img src="HAUSAUDI.jpg" alt="HAUSAUDI Thumbnail"> <!-- Thumbnail for HAUSAUDI -->
+                </a>
+            </div>
+            <div class="text">
+                HAUSDC proudly took part in the prestigious Dance Supremacy 2023 competition. Their journey through intense rehearsals, creative brainstorming, and exhilarating performances highlighted their dedication to the art of dance. This event served as a platform for them to showcase their skills and connect with fellow dance enthusiasts, representing their school with pride.
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Section -->
+    <section class="additional-section">
+        <h2>Join Us and Experience the Magic of Dance!</h2>
+        <p>Be part of the vibrant community that celebrates creativity, talent, and passion.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HAUSDC. All Rights Reserved.</p>
+        <a href="https://www.facebook.com/profile.php?id=61560697122999" target="_blank">FACEBOOK</a> <!-- Facebook link -->
+        <a href="https://www.instagram.com/hausdc.official/" target="_blank">INSTAGRAM</a> <!-- Instagram link -->
+        <a href="https://www.tiktok.com/@hausdc.official" target="_blank">TIKTOK</a> <!-- TikTok link -->
+        <a href="mailto:hausdc.official@gmail.com">GMAIL</a> <!-- Gmail link -->
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
