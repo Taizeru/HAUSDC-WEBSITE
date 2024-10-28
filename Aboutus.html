@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAUSDC</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> <!-- Importing Bebas Neue -->
+    <style>
+        
+        body {
+            font-family: 'Bebas Neue', sans-serif; /* Change font for body */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Set a light background color for the body */
+            color: white; /* Text color */
+        }
+
+        /* Moving Strip Styles */
+        .moving-strip {
+            position: relative; /* Position it in relation to the document flow */
+            width: 100%;
+            background-color: black; /* Background color for the strip */
+            color: red;
+            font-size: 24px; /* Font size for moving text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow to create a clean edge */
+            display: flex;
+            align-items: center; /* Center text vertically */
+            z-index: 10; /* Ensure it appears above other elements */
+            padding: 10px 0; /* Padding for vertical spacing */
+        }
+
+        .moving-text {
+            display: flex; /* Use flexbox for seamless effect */
+            animation: glitch 1s linear infinite; /* Glitch animation */
+            position: relative; /* Set position to relative for absolute children */
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            10% {
+                transform: translateY(-2px);
+                opacity: 0.8;
+            }
+            20% {
+                transform: translateY(2px);
+                opacity: 0.6;
+            }
+            30% {
+                transform: translateY(-2px);
+                opacity: 0.8;
+            }
+            40% {
+                transform: translateY(2px);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Repeat the text for a seamless effect */
+        .moving-text span {
+            padding-right: 50px; /* Add space between repeated texts */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  /* Align everything in the center vertically */
+            z-index: 5; /* Ensure header is below the strip */
+        }
+
+        /* Logo Text Style */
+        header .logo {
+            font-size: 36px; /* Set the font size for the logo */
+            font-weight: bold; /* Make the logo text bold */
+            color: red; /* Logo color */
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;  /* Aligns navigation items vertically */
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            margin-right: 20px;  /* Spacing between links */
+        }
+
+        /* Style for the Sign-up button to make it distinct */
+        header nav .signup {
+            background-color: red;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 20px;  /* Add space between the sign-up button and other links */
+            font-weight: bold;
+        }
+
+        /* Body Section */
+        .Body {
+            background-image: url('HAUSW.jpg'); /* Set HAUSW as the background image for the Body section */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 100vh; /* Set height to full viewport height */
+            display: flex;
+            justify-content: center; /* Center the text in the Body section */
+            align-items: center; /* Center items vertically */
+            padding: 50px;
+            position: relative;
+            text-align: center; /* Center align text */
+            margin: 0; /* No margin needed here */
+        }
+
+        /* Logo Image Style in Body Section */
+        .Body .text-section {
+            color:red;
+            font-size: 36px;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo"> <!-- Make HAUSDC logo clickable to home -->
+            HAUSDC
+        </a>
+        <nav>
+            <a href="History.html">HISTORY</a> <!-- Placeholder for history file -->
+            <a href="Merch.html">MERCH</a> <!-- Placeholder for merch file -->
+            <a href="Aboutus.html">ABOUT US</a> <!-- Placeholder for about us file -->
+            <a href="Sign-in.html" class="signup">SIGN-UP</a> <!-- Placeholder for sign-up file -->
+        </nav>
+    </header>
+
+    <!-- Moving Strip -->
+    <div class="moving-strip">
+        <div class="moving-text">
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+            <span>BE AFRAID</span>
+        </div>
+    </div>
+
+    <!-- Body Section -->
+    <section class="Body">
+        <div class="text-section">
+            Holy Angel University Street Dance Crew (HAUSDC) is a nonprofit organization from Holy Angel University founded by Jullian Paminutan in 2013. HAUSDC was recognized for performing different intermission numbers from different events inside the campus and acing dance competitions outside the university later on. Moreover, the crew was officially accredited as a nonprofit organization by the university with the help of Sir Raymond Patterson.
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 HAUSDC. All Rights Reserved.</p>
+        <a href="https://www.facebook.com/profile.php?id=61560697122999" target="_blank">FACEBOOK</a> <!-- Facebook link -->
+        <a href="https://www.instagram.com/hausdc.official/" target="_blank">INSTAGRAM</a> <!-- Instagram link -->
+        <a href="https://www.tiktok.com/@hausdc.official" target="_blank">TIKTOK</a> <!-- TikTok link -->
+        <a href="mailto:hausdc.official@gmail.com">GMAIL</a> <!-- Gmail link -->
+    </footer>
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
